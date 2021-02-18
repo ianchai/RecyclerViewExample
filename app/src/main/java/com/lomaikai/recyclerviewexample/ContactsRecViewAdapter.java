@@ -1,6 +1,7 @@
 package com.lomaikai.recyclerviewexample;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.target.ViewTarget;
 
 import java.util.ArrayList;
 
@@ -50,6 +54,12 @@ public class ContactsRecViewAdapter extends RecyclerView.Adapter<ContactsRecView
                 Toast.makeText(context, contacts.get(position).getName()+" selected", Toast.LENGTH_SHORT).show();
             }
         });
+
+        // Use Glide dependency to show the image on the card view
+         Glide.with(context)
+                .asBitmap()
+                .load(contacts.get(position).getImageURL())
+                .into(holder.image);
     }
 
     @Override

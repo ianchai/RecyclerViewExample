@@ -1,6 +1,8 @@
 package com.lomaikai.recyclerviewexample;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -29,5 +31,23 @@ public class MainActivity extends AppCompatActivity {
         contacts.add(new Contact("Katrina Shanks", "019-434-2354", "https://www.adventuresinodyssey.com/wp-content/uploads/23_Katrina-Meltsner-1.png"));
         contacts.add(new Contact("Aubrey Shepherd", "014-484-3454", "https://www.adventuresinodyssey.com/wp-content/uploads/Aubrey-Shepard-Clipped.png"));
         contacts.add(new Contact("Bernard Walton", "015-555-5354", "https://static.wikia.nocookie.net/adventuresinodyssey/images/4/43/255px-Bernardwalton.png"));
+
+        // Create ContactsRecViewAdapter class
+        ContactsRecViewAdapter adapter = new ContactsRecViewAdapter(this);
+        adapter.setContacts(contacts);
+
+        // Pass the adapter to the RecyclerView Object
+        contextRecView.setAdapter(adapter);
+
+        // Set layout manager for the recycler view
+
+        // If we want linear layout vertical
+        // contextRecView.setLayoutManager(new LinearLayoutManager(this));
+
+        // if we want linear layout horizontal
+        // contextRecView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+
+        // For grid layout
+        contextRecView.setLayoutManager(new GridLayoutManager(this, 2));
     }
 }
