@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">RecyclerViewExample</string>
+    <string name="photo_of_contact">Photo of Contact</string>
 </resources>
