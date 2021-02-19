@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.Display;
+import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 
 import java.lang.reflect.Array;
@@ -41,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
 
         // Pass the adapter to the RecyclerView Object
         contextRecView.setAdapter(adapter);
+
+        // Display display = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+        // int rotation = display.getRotation();
+        // https://stackoverflow.com/questions/5112118/how-to-detect-orientation-of-android-device#:~:text=getDefaultDisplay()%3B%20int%20rotation%20%3D%20display,from%20its%20%22natural%22%20orientation.
 
         // Set layout manager for the recycler view
 
